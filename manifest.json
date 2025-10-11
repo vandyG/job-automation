@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Listbox Automation Extension",
+  "version": "1.0",
+  "description": "Automates listbox selections based on predefined values",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Listbox Automation"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
